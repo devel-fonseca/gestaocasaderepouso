@@ -12,45 +12,17 @@
             font-family: 'Inter', sans-serif;
         }
         
-        .fade-in {
-            animation: fadeIn 1.5s ease-in-out;
-        }
+        .fade-in { animation: fadeIn 1.5s ease-in-out; }
+        .slide-up { animation: slideUp 1s ease-out 0.5s both; }
+        .pulse-glow { animation: pulseGlow 2s ease-in-out infinite; }
         
-        .slide-up {
-            animation: slideUp 1s ease-out 0.5s both;
-        }
-        
-        .pulse-glow {
-            animation: pulseGlow 2s ease-in-out infinite;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        @keyframes slideUp {
-            from { 
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to { 
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes pulseGlow {
-            0%, 100% { 
-                box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
-            }
-            50% { 
-                box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
-            }
-        }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes pulseGlow { 0%,100% { box-shadow: 0 0 20px rgba(59,130,246,0.3); } 50% { box-shadow: 0 0 30px rgba(59,130,246,0.5); } }
     </style>
 </head>
-<body class="bg-gradient-to-br from-slate-50 to-blue-50 min-h-screen">
+<body class="bg-gradient-to-br from-slate-50 to-blue-50 min-h-screen flex flex-col">
+
     <!-- Cabeçalho -->
     <header class="w-full py-8 fade-in">
         <div class="container mx-auto px-6">
@@ -63,6 +35,7 @@
     <!-- Conteúdo Principal -->
     <main class="flex-1 flex items-center justify-center px-6 py-12">
         <div class="max-w-4xl mx-auto text-center">
+
             <!-- Mensagem Principal -->
             <div class="slide-up mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
@@ -73,20 +46,30 @@
                 </p>
             </div>
 
-            <!-- Seção Central com Destaque -->
-            <div class="slide-up bg-white rounded-2xl shadow-xl p-8 md:p-12 pulse-glow border border-blue-100">
-                <div class="mb-8">
-                    <h3 class="text-2xl md:text-3xl font-semibold text-slate-800 leading-relaxed mb-8">
-                        Você sabe a diferença entre uma casa de repouso, um residencial para idosos ou uma instituição de longa permanência de idosos (ILPI)?
-                    </h3>
-                </div>
-                
-                <div class="flex items-center justify-center mb-6">
-                    <span class="text-4xl mr-4">👉</span>
-                    <p class="text-lg md:text-xl text-slate-700 font-medium">
-                        <strong class="text-blue-600">Fique ligado!</strong> Em breve traremos conteúdos exclusivos para gestores, familiares e profissionais da área.
-                    </p>
-                </div>
+            <!-- Destaque com pergunta -->
+            <div class="slide-up bg-white rounded-2xl shadow-xl p-8 md:p-12 pulse-glow border border-blue-100 mb-12">
+                <h3 class="text-2xl md:text-3xl font-semibold text-slate-800 leading-relaxed mb-6">
+                    Você sabe a diferença entre uma casa de repouso, um residencial para idosos ou uma instituição de longa permanência de idosos (ILPI)?
+                </h3>
+                <p class="text-lg md:text-xl text-slate-700 font-medium">
+                    <strong class="text-blue-600">Fique ligado!</strong> Em breve traremos conteúdos exclusivos para gestores, familiares e profissionais da área.
+                </p>
+            </div>
+
+            <!-- Formulário para capturar emails -->
+            <div class="slide-up bg-white rounded-2xl shadow-md p-8 md:p-12 border border-blue-100">
+                <h4 class="text-xl font-semibold text-slate-800 mb-4">Receba novidades por e-mail:</h4>
+                <form id="contact-form" action="https://formspree.io/f/mandkazb" method="POST" class="flex flex-col gap-4">
+                    <input type="email" name="email" placeholder="Seu e-mail" required
+                           class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+                    <textarea name="message" placeholder="Mensagem (opcional)"
+                              class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"></textarea>
+                    <button type="submit"
+                            class="bg-blue-600 text-white font-semibold py-2 px-6 rounded-lg hover:bg-blue-700 transition">
+                        Enviar
+                    </button>
+                    <p id="form-status" class="text-sm text-gray-700 mt-2"></p>
+                </form>
             </div>
 
             <!-- Informações Adicionais -->
@@ -116,11 +99,45 @@
 
     <!-- Rodapé -->
     <footer class="w-full py-8 fade-in">
-        <div class="container mx-auto px-6 text-center">
-            <p class="text-slate-500 text-sm">
-                © 2025 Gestão Casa de Repouso - Site em desenvolvimento
-            </p>
+        <div class="container mx-auto px-6 text-center text-slate-500 text-sm">
+            Desenvolvido com ❤️ para a gestão e bem-estar de idosos • © 2025 Gestão Casa de Repouso - Site em desenvolvimento
         </div>
     </footer>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97e46360c01352eb',t:'MTc1NzczMjM2Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+
+    <!-- Script AJAX Formspree -->
+    <script>
+        const form = document.getElementById('contact-form');
+        const status = document.getElementById('form-status');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            status.textContent = "Enviando...";
+
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch(form.action, {
+                    method: form.method,
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    status.textContent = "Obrigado! Recebemos seu e-mail.";
+                    form.reset();
+                } else {
+                    const data = await response.json();
+                    if (data.errors) {
+                        status.textContent = data.errors.map(err => err.message).join(", ");
+                    } else {
+                        status.textContent = "Ops! Algo deu errado. Tente novamente.";
+                    }
+                }
+            } catch (error) {
+                status.textContent = "Erro no envio. Verifique sua conexão e tente novamente.";
+            }
+        });
+    </script>
+
+</body>
 </html>
