@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão Casa de Repouso - Em Construção</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        
+        .slide-up {
+            animation: slideUp 1s ease-out 0.5s both;
+        }
+        
+        .pulse-glow {
+            animation: pulseGlow 2s ease-in-out infinite;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulseGlow {
+            0%, 100% { 
+                box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+            }
+            50% { 
+                box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-50 to-blue-50 min-h-screen">
+    <!-- Cabeçalho -->
+    <header class="w-full py-8 fade-in">
+        <div class="container mx-auto px-6">
+            <h1 class="text-2xl md:text-3xl font-bold text-slate-800 text-center">
+                gestaocasaderepouso.com.br
+            </h1>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="flex-1 flex items-center justify-center px-6 py-12">
+        <div class="max-w-4xl mx-auto text-center">
+            <!-- Mensagem Principal -->
+            <div class="slide-up mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
+                    Gestão Casa de Repouso
+                </h2>
+                <p class="text-xl md:text-2xl text-blue-600 font-medium">
+                    em breve no ar!
+                </p>
+            </div>
+
+            <!-- Seção Central com Destaque -->
+            <div class="slide-up bg-white rounded-2xl shadow-xl p-8 md:p-12 pulse-glow border border-blue-100">
+                <div class="mb-8">
+                    <h3 class="text-2xl md:text-3xl font-semibold text-slate-800 leading-relaxed mb-8">
+                        Você sabe a diferença entre uma casa de repouso, um residencial para idosos ou uma instituição de longa permanência de idosos (ILPI)?
+                    </h3>
+                </div>
+                
+                <div class="flex items-center justify-center mb-6">
+                    <span class="text-4xl mr-4">👉</span>
+                    <p class="text-lg md:text-xl text-slate-700 font-medium">
+                        <strong class="text-blue-600">Fique ligado!</strong> Em breve traremos conteúdos exclusivos para gestores, familiares e profissionais da área.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Informações Adicionais -->
+            <div class="slide-up mt-12">
+                <div class="grid md:grid-cols-3 gap-6 text-center">
+                    <div class="bg-blue-50 rounded-xl p-6 border border-blue-100">
+                        <div class="text-3xl mb-3">👥</div>
+                        <h4 class="font-semibold text-slate-800 mb-2">Gestores</h4>
+                        <p class="text-sm text-slate-600">Ferramentas e estratégias para uma gestão eficiente</p>
+                    </div>
+                    
+                    <div class="bg-blue-50 rounded-xl p-6 border border-blue-100">
+                        <div class="text-3xl mb-3">❤️</div>
+                        <h4 class="font-semibold text-slate-800 mb-2">Familiares</h4>
+                        <p class="text-sm text-slate-600">Orientações para escolher o melhor cuidado</p>
+                    </div>
+                    
+                    <div class="bg-blue-50 rounded-xl p-6 border border-blue-100">
+                        <div class="text-3xl mb-3">🏥</div>
+                        <h4 class="font-semibold text-slate-800 mb-2">Profissionais</h4>
+                        <p class="text-sm text-slate-600">Conhecimento técnico e boas práticas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="w-full py-8 fade-in">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-slate-500 text-sm">
+                © 2025 Gestão Casa de Repouso - Site em desenvolvimento
+            </p>
+        </div>
+    </footer>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97e46360c01352eb',t:'MTc1NzczMjM2Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
